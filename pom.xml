@@ -312,7 +312,6 @@
                     <execution>
                         <id>default-compile</id>
                         <configuration>
-                            <release>17</release>
                         </configuration>
                     </execution>
                     <execution>
@@ -328,7 +327,6 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <release>8</release>
                 </configuration>
             </plugin>
             <plugin>

@@ -27,6 +27,21 @@ app.controller('FlowControllerV2', ['$scope', '$stateParams', 'FlowServiceV2', '
       }
     };
 
+    // 新增：手动刷新规则函数
+    $scope.manualRefreshRules = function() {
+      // 1. 给用户一个即时视觉反馈（图标旋转）
+      var refreshBtn = angular.element(document.querySelector('.fa-refresh'));
+      refreshBtn.addClass('fa-spin');
+
+      // 2. 调用已有的数据获取函数
+      getMachineRules();
+
+      // 3. 0.5秒后停止旋转动画
+      setTimeout(function() {
+        refreshBtn.removeClass('fa-spin');
+      }, 500);
+    };
+
     $scope.generateThresholdTypeShow = (rule) => {
       if (!rule.clusterMode) {
         return '单机';
